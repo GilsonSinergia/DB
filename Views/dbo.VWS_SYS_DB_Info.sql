@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE VIEW [dbo].[VWS_SYS_DB_Info]
+AS
+SELECT 
+  1  DBTypeID,
+  'Dominus'  DBType,
+  78 DBVer
+GO

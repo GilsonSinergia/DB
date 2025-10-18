@@ -1,0 +1,8 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE   VIEW [dbo].[VWS_Movimento_Titulos]
+AS
+SELECT * FROM dbo.fns_Movimento_Titulos(DEFAULT);
+GO

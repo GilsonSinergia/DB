@@ -1,0 +1,13 @@
+CREATE TABLE [dbo].[COM_ITE_Fornecedor]
+(
+[ItemID] [int] NOT NULL,
+[PessoaID] [int] NOT NULL,
+[Codigo] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[COM_ITE_Fornecedor] ADD CONSTRAINT [PK_ProdPess0_03BEEA60] PRIMARY KEY CLUSTERED ([ItemID], [PessoaID], [Codigo])
+GO
+ALTER TABLE [dbo].[COM_ITE_Fornecedor] ADD CONSTRAINT [FK_COM_ITE_Fornecedor_COM_ITE_CAD] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[COM_ITE_CAD] ([ItemID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[COM_ITE_Fornecedor] ADD CONSTRAINT [FK_ProdPess0_CadPess0_038A8470] FOREIGN KEY ([PessoaID]) REFERENCES [dbo].[CadPess0] ([PessoaID])
+GO

@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[CadRegi0]
+(
+[RegiaoID] [int] NOT NULL,
+[Regiao] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[CadRegi0] ADD CONSTRAINT [PK_Regioes] PRIMARY KEY NONCLUSTERED ([RegiaoID])
+GO
+ALTER TABLE [dbo].[CadRegi0] ADD CONSTRAINT [Regioes0] UNIQUE NONCLUSTERED ([Regiao])
+GO

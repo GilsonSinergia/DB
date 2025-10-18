@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[FIS_MDFe_Percuso]
+(
+[FIS_MDFe_ID] [int] NOT NULL,
+[UFID] [tinyint] NOT NULL,
+[Seq] [tinyint] NOT NULL
+)
+GO
+ALTER TABLE [dbo].[FIS_MDFe_Percuso] ADD CONSTRAINT [PK_FIS_MDFe_Percuso] PRIMARY KEY CLUSTERED ([FIS_MDFe_ID], [UFID])
+GO
+ALTER TABLE [dbo].[FIS_MDFe_Percuso] ADD CONSTRAINT [FK_FIS_MDFe_Percuso_FIS_MDFe] FOREIGN KEY ([FIS_MDFe_ID]) REFERENCES [dbo].[FIS_MDFe] ([FIS_MDFe_ID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[FIS_MDFe_Percuso] ADD CONSTRAINT [FK_FIS_MDFe_Percuso_LkpUF0] FOREIGN KEY ([UFID]) REFERENCES [dbo].[LkpUF0] ([UFID])
+GO
+EXEC sp_bindefault N'[dbo].[DF_Zero]', N'[dbo].[FIS_MDFe_Percuso].[Seq]'
+GO

@@ -1,0 +1,12 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE   VIEW [dbo].[VWS_COM_PRC_Tipo]
+AS
+SELECT 0 TipoID, 'Primaria' Tipo
+UNION 
+SELECT 1 TipoID, 'Acrécimo' Tipo
+UNION 
+SELECT 2 TipoID, 'Desconto' Tipo
+GO

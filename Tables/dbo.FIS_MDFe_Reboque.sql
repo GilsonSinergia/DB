@@ -1,0 +1,13 @@
+CREATE TABLE [dbo].[FIS_MDFe_Reboque]
+(
+[FIS_MDFe_ID] [int] NOT NULL,
+[Placa] [char] (7) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+[Tara] [int] NOT NULL,
+[TpCar] [tinyint] NOT NULL,
+[UFID] [tinyint] NOT NULL
+)
+GO
+ALTER TABLE [dbo].[FIS_MDFe_Reboque] ADD CONSTRAINT [PK_FIS_MDFe_Reboque] PRIMARY KEY CLUSTERED ([FIS_MDFe_ID], [Placa])
+GO
+ALTER TABLE [dbo].[FIS_MDFe_Reboque] ADD CONSTRAINT [FK_FIS_MDFe_Reboque_FIS_MDFe_Rodo1] FOREIGN KEY ([FIS_MDFe_ID]) REFERENCES [dbo].[FIS_MDFe_Rodo] ([FIS_MDFe_ID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO

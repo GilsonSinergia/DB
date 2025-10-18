@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[LKPVeic0]
+(
+[TipoID] [tinyint] NOT NULL,
+[Tipo] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AI NULL
+)
+GO
+ALTER TABLE [dbo].[LKPVeic0] ADD CONSTRAINT [PK_LKPVeic0] PRIMARY KEY CLUSTERED ([TipoID])
+GO

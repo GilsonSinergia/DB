@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[NaturezaFrete]
+(
+[IND_NAT_FRTID] [tinyint] NOT NULL,
+[IND_NAT_FRT] [varchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[NaturezaFrete] ADD CONSTRAINT [PK_NaturezaFrete] PRIMARY KEY CLUSTERED ([IND_NAT_FRTID])
+GO

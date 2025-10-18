@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[BCCreditoPisCofins]
+(
+[NAT_BC_CREDID] [tinyint] NOT NULL,
+[NAT_BC_CRED] [varchar] (150) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[BCCreditoPisCofins] ADD CONSTRAINT [PK_BCCreditoPisCofins] PRIMARY KEY CLUSTERED ([NAT_BC_CREDID])
+GO

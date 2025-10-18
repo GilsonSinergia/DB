@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[FIS_NCM]
+(
+[NCM] [char] (8) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+[GFID] [tinyint] NOT NULL,
+[Descricao] [varchar] (250) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[FIS_NCM] ADD CONSTRAINT [PK_FIS_NCM] PRIMARY KEY CLUSTERED ([NCM])
+GO
+ALTER TABLE [dbo].[FIS_NCM] ADD CONSTRAINT [FK_FIS_NCM_FIS_ITE_GRP_CAD] FOREIGN KEY ([GFID]) REFERENCES [dbo].[FIS_ITE_GRP_CAD] ([GFID])
+GO
+EXEC sp_bindefault N'[dbo].[DF_UM]', N'[dbo].[FIS_NCM].[GFID]'
+GO
+EXEC sp_bindefault N'[dbo].[DF_UM]', N'[dbo].[FIS_NCM].[Descricao]'
+GO

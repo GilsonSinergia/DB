@@ -1,0 +1,12 @@
+CREATE TABLE [dbo].[PagUnid0]
+(
+[PagamentoID] [smallint] NOT NULL,
+[UnidadeID] [tinyint] NOT NULL
+)
+GO
+ALTER TABLE [dbo].[PagUnid0] ADD CONSTRAINT [PK_PagUnid0] PRIMARY KEY CLUSTERED ([PagamentoID], [UnidadeID])
+GO
+ALTER TABLE [dbo].[PagUnid0] WITH NOCHECK ADD CONSTRAINT [FK_PagUnid0_CadPaga0] FOREIGN KEY ([PagamentoID]) REFERENCES [dbo].[CadPaga0] ([PagamentoID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[PagUnid0] ADD CONSTRAINT [FK_PagUnid0_CadUnid0] FOREIGN KEY ([UnidadeID]) REFERENCES [dbo].[CadUnid0] ([UnidadeID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO

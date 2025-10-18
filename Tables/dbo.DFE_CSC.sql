@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[DFE_CSC]
+(
+[UnidadeID] [tinyint] NOT NULL,
+[CSCID] [tinyint] NOT NULL,
+[CSC] [varchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL
+)
+GO
+ALTER TABLE [dbo].[DFE_CSC] ADD CONSTRAINT [PK_DFE_CSC] PRIMARY KEY CLUSTERED ([UnidadeID], [CSCID])
+GO
+ALTER TABLE [dbo].[DFE_CSC] ADD CONSTRAINT [FK_DFE_CSC_FIS_Unidade] FOREIGN KEY ([UnidadeID]) REFERENCES [dbo].[FIS_Unidade] ([UnidadeID])
+GO

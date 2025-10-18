@@ -1,0 +1,12 @@
+CREATE TABLE [dbo].[UserCont0]
+(
+[UsuarioID] [int] NOT NULL,
+[ContaID] [int] NOT NULL
+)
+GO
+ALTER TABLE [dbo].[UserCont0] ADD CONSTRAINT [PK_UserCont0] PRIMARY KEY CLUSTERED ([UsuarioID], [ContaID])
+GO
+ALTER TABLE [dbo].[UserCont0] ADD CONSTRAINT [FK_UserCont0_CadCont0] FOREIGN KEY ([ContaID]) REFERENCES [dbo].[CadCont0] ([ContaID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[UserCont0] ADD CONSTRAINT [FK_UserCont0_CadUser0] FOREIGN KEY ([UsuarioID]) REFERENCES [dbo].[CadUser0] ([UsuarioID]) ON DELETE CASCADE ON UPDATE CASCADE
+GO
